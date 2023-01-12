@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product",
+    "displayName": "Товары",
     "description": ""
   },
   "options": {
@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
-    "Images": {
+    "images": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -29,11 +29,43 @@
         "audios"
       ]
     },
-    "category": {
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "price_id": {
+      "type": "integer"
+    },
+    "subcategories": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
+      "relation": "manyToMany",
+      "target": "api::subcategory.subcategory",
       "inversedBy": "products"
+    },
+    "isNew": {
+      "type": "boolean"
+    },
+    "isHit": {
+      "type": "boolean"
+    },
+    "props": {
+      "type": "json"
+    },
+    "calculator": {
+      "type": "json"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-review.product-review",
+      "mappedBy": "product"
     }
   }
 }

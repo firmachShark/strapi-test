@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "reviews",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Категории",
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Отзывы",
     "description": ""
   },
   "options": {
@@ -12,10 +12,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "author": {
       "type": "string"
     },
-    "preview": {
+    "comment": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -26,13 +32,7 @@
         "audios"
       ]
     },
-    "subcategories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::subcategory.subcategory",
-      "mappedBy": "category"
-    },
-    "fullName": {
+    "product": {
       "type": "string"
     }
   }

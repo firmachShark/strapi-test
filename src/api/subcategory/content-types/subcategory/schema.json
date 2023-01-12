@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "subcategories",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Категории",
+    "singularName": "subcategory",
+    "pluralName": "subcategories",
+    "displayName": "Подкатегории",
     "description": ""
   },
   "options": {
@@ -26,14 +26,17 @@
         "audios"
       ]
     },
-    "subcategories": {
+    "category": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::subcategory.subcategory",
-      "mappedBy": "category"
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "subcategories"
     },
-    "fullName": {
-      "type": "string"
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "subcategories"
     }
   }
 }

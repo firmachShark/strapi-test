@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "blogs",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Категории",
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Блог",
     "description": ""
   },
   "options": {
@@ -12,8 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
+    },
+    "content": {
+      "type": "richtext"
     },
     "preview": {
       "type": "media",
@@ -25,15 +28,6 @@
         "videos",
         "audios"
       ]
-    },
-    "subcategories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::subcategory.subcategory",
-      "mappedBy": "category"
-    },
-    "fullName": {
-      "type": "string"
     }
   }
 }
