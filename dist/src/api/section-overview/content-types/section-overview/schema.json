@@ -1,0 +1,33 @@
+{
+    "kind": "collectionType",
+    "collectionName": "section_overviews",
+    "info": {
+        "singularName": "section-overview",
+        "pluralName": "section-overviews",
+        "displayName": "(Главная) Первая каруселька",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "content": {
+            "type": "richtext"
+        },
+        "href": {
+            "type": "string"
+        },
+        "photo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        }
+    }
+}

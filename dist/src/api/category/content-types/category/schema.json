@@ -1,0 +1,39 @@
+{
+    "kind": "collectionType",
+    "collectionName": "categories",
+    "info": {
+        "singularName": "category",
+        "pluralName": "categories",
+        "displayName": "Категории",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "preview": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "subcategories": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::subcategory.subcategory",
+            "mappedBy": "category"
+        },
+        "fullName": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "kind": "collectionType",
+    "collectionName": "products",
+    "info": {
+        "singularName": "product",
+        "pluralName": "products",
+        "displayName": "Товары",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "images": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "preview": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "price_id": {
+            "type": "integer"
+        },
+        "subcategories": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::subcategory.subcategory",
+            "inversedBy": "products"
+        },
+        "isNew": {
+            "type": "boolean"
+        },
+        "isHit": {
+            "type": "boolean"
+        },
+        "props": {
+            "type": "json"
+        },
+        "calculator": {
+            "type": "json"
+        },
+        "reviews": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::product-review.product-review",
+            "mappedBy": "product"
+        }
+    }
+}
