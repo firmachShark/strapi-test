@@ -34,6 +34,18 @@
     },
     "fullName": {
       "type": "string"
+    },
+    "yandex_metrika": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::yandex-metrika.yandex-metrika",
+      "inversedBy": "categories"
+    },
+    "calculator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::calculator.calculator",
+      "mappedBy": "category"
     }
   }
 }
